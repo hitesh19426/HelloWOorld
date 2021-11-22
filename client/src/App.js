@@ -4,7 +4,7 @@ import getWeb3 from "./getWeb3";
 import "./App.css";
 
 class App extends Component {
-  state = { storageValue: "", web3: null, accounts: null, contract: null };
+  state = { message: "", web3: null, accounts: null, contract: null };
 
   componentDidMount = async () => {
     try {
@@ -41,7 +41,7 @@ class App extends Component {
     console.log("message", message);
 
     // Update state with the result.
-    this.setState({ storageValue: message });
+    this.setState({ message: message });
   };
 
   render() {
@@ -57,7 +57,7 @@ class App extends Component {
           If your contracts compiled and migrated successfully, below will show
           a stored message of null (by default).
         </p>
-        <div>The stored message is: {this.state.storedMessage}</div>
+        <div>The stored message is: {this.state.message}</div>
       </div>
     );
   }
